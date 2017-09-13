@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="3" ignored="1" total="7" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="8216" started-at="2017-09-12T11:34:29Z" finished-at="2017-09-12T11:34:37Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="8216" started-at="2017-09-12T11:34:29Z" finished-at="2017-09-12T11:34:37Z">
+      <class name="testcases.fp.TC_Fp">
+        <test-method status="PASS" signature="InitialSetUp()[pri:0, instance:testcases.fp.TC_Fp@4566e5bd]" name="InitialSetUp" is-config="true" duration-ms="7160" started-at="2017-09-12T17:04:21Z" finished-at="2017-09-12T17:04:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InitialSetUp -->
+        <test-method status="PASS" signature="setUpTest()[pri:0, instance:testcases.fp.TC_Fp@4566e5bd]" name="setUpTest" is-config="true" duration-ms="1" started-at="2017-09-12T17:04:29Z" finished-at="2017-09-12T17:04:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpTest -->
+        <test-method status="PASS" signature="setUpApiUrl()[pri:0, instance:testcases.fp.TC_Fp@4566e5bd]" name="setUpApiUrl" is-config="true" duration-ms="1560" started-at="2017-09-12T17:04:29Z" finished-at="2017-09-12T17:04:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpApiUrl -->
+        <test-method status="FAIL" signature="testSuccess(java.lang.String, java.lang.String)[pri:0, instance:testcases.fp.TC_Fp@4566e5bd]" name="testSuccess" duration-ms="1065" started-at="2017-09-12T17:04:30Z" data-provider="apiUrlMapping" finished-at="2017-09-12T17:04:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[dialog]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://pranathi.api.staging.airpush.com/dialogad/adcall.php?APIKEY=airpush&appId=45967&imei=21d688d862e84b09bc01e9f7ba8025bd&imei_sha=89142a0596f0b63b308537e1c8a5a41d&token=3c348b0fd1f221c34e0dab7a8991c5b8&request_timestamp=2014-02-04+10%3A10%3A10_USA_GMT&packageName=com.test.sdk&version=17&language=English&country=India&statename=Andhra+Pradesh&carriername=MTNL&countryname=India&carrier=MTNL&networkOperator=MTNL&zip=&phoneModel=Galaxy+S4+-+Verizon&manufacturer=Samsung&ipaddress=181.11.23.95&longitude=0.000000&latitude=0.000000&sdkversion=8.03&wifi=0&useragent=Mozilla%252F5.0%2B%2528Linux%253B%2BU%253B%2BAndroid%2B4.1.2%253B%2Ben-gb%253B%2BC6602%2BBuild%252F10.1.1.A.1.253%2529%2BAppleWebKit%252F534.30%2B%2528KHTML%252C%2Blike%2BGecko%2529%2BVersion%252F4.0%2BMobile%2BSafari%252F534.30&android_id=bf26116c6df30e6cb58425f409aa206a&android_id_sha=21b94065411e83acbf531de57d9fee37&screenSize=1260_1260&deviceUniqueness=serial&networkSubType=&isTablet=false&SD=3.0&isConnectionFast=true&unknownsource=0&appName=Airpush+SDK+6.0&email=glm856%40gmail.com&email_md5=d6c7e534c9957785aa4d7d5148de696e&email_sha=1179e12deacc30d6c0a86c4cbc12aed89c304b1f&dpi=480&sessionId=08e39abc587bf89850fa2159e9c6cad1&locale=en_GB&overwrite_geo_vars=1&isXMLFound=1&qa_test_api&campid=&creatid=]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Body doesnt contain string : {"status":140,"count":0,"url":"","message":"campaign not available"} expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Body doesnt contain string : {"status":140,"count":0,"url":"","message":"campaign not available"} expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at api.controller.response.ApiResponseValidator.expectInBody(ApiResponseValidator.java:52)
+	at testcases.fp.TC_Fp.testSuccess(TC_Fp.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuccess -->
+        <test-method status="PASS" signature="testSuccess(java.lang.String, java.lang.String)[pri:0, instance:testcases.fp.TC_Fp@4566e5bd]" name="testSuccess" duration-ms="1215" started-at="2017-09-12T17:04:31Z" data-provider="apiUrlMapping" finished-at="2017-09-12T17:04:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[overlay]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://pranathi.api.staging.airpush.com/overlayads/overlayadcall.php?screenSize=468_60&APIKEY=airpush&appId=10713&imei=c13811f33e8a58a9274b9b69486d6771&imei_sha=f5d4486ab1ec092c0b4c43df2d536da6&token=cc8953f671a034485db3d61226a0637f&request_timestamp=2014-02-14+08%3A10%3A10_USA_GMT&packageName=com.test.sdk&version=17&language=English&country=India&statename=Maharashtra&carriername=Hutchison+Telecom&countryname=Indonesia&carrier=Hutchison+Telecom&networkOperator=Hutchison+Telecom&zip=&phoneModel=Galaxy+Trend+Duos+2&manufacturer=Samsung&ipaddress=103.10.66.76&longitude=106.7938241&latitude=-6.5592537&sdkversion=7.03&wifi=0&useragent=Mozilla%252F5.0%2B%2528Linux%253B%2BU%253B%2BAndroid%2B4.1.2%253B%2Ben-gb%253B%2BC6602%2BBuild%252F10.1.1.A.1.253%2529%2BAppleWebKit%252F534.30%2B%2528KHTML%252C%2Blike%2BGecko%2529%2BVersion%252F4.0%2BMobile%2BSafari%252F534.30&android_id=203d147e34f956bd910950cc3fe8a0dcfe8818ed&android_id_sha=c816be60a2b018a14adee4d8c2e4ba03c5fb6db3&deviceUniqueness=serial&networkSubType=&SD=1.0&isConnectionFast=true&unknownsource=0&appName=com+animezwallpapers+neon+genesis+evangelion&email=glm856%40gmail.com&email_md5=d6c7e534c9957785aa4d7d5148de696e&email_sha=1179e12deacc30d6c0a86c4cbc12aed89c304b1f&dpi=480&sessionId=81dad8ffb06c3b51027c62011aa25b99&locale=en_GB&overwrite_geo_vars=1&isXMLFound=1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuccess -->
+        <test-method status="PASS" signature="testSuccess(java.lang.String, java.lang.String)[pri:0, instance:testcases.fp.TC_Fp@4566e5bd]" name="testSuccess" duration-ms="1070" started-at="2017-09-12T17:04:32Z" data-provider="apiUrlMapping" finished-at="2017-09-12T17:04:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[inapp]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://pranathi.api.staging.airpush.com/bannerads/banneradcall.php?APIKEY=airpush&appId=45967&imei=ab704385ffd64999962ec642033116e3&imei_sha=b76290edb3bb4577cb3f5a579c101fe0&token=165f172d4c3bc3ebcea42a1febebf05a&request_timestamp=2014-02-14+08%3A10%3A10_USA_GMT&packageName=com.test.sdk&version=17&language=English&country=India&statename=Maharashtra&carriername=Airtel+&countryname=India&carrier=Airtel+&networkOperator=Airtel+&zip=&phoneModel=Xperia+X10a+Mini+Pro+%2F+X10a&manufacturer=Sony+Ericsson&ipaddress=171.49.200.111&longitude=0.000000&latitude=0.000000&sdkversion=8.03&wifi=0&useragent=Mozilla%252F5.0%2B%2528Linux%253B%2BU%253B%2BAndroid%2B4.1.2%253B%2Ben-gb%253B%2BC6602%2BBuild%252F10.1.1.A.1.253%2529%2BAppleWebKit%252F534.30%2B%2528KHTML%252C%2Blike%2BGecko%2529%2BVersion%252F4.0%2BMobile%2BSafari%252F534.30&android_id=cb60b3821e90282d35c8cdb195019c7f&android_id_sha=04d5873717ec6d8c34e39679fd8223a4&screenSize=1260_1260&deviceUniqueness=serial&networkSubType=&isTablet=false&SD=3.0&isConnectionFast=true&unknownsource=0&appName=Airpush+SDK+6.0&email=glm856%40gmail.com&email_md5=d6c7e534c9957785aa4d7d5148de696e&email_sha=1179e12deacc30d6c0a86c4cbc12aed89c304b1f&dpi=480&sessionId=7fd1c0f70f06a25d33d3ff768e477539&locale=en_GB&overwrite_geo_vars=1&isXMLFound=1&banner_type=image&supports=%7B%22inlineVideo%22%3Afalse%2C%22storePictures%22%3Atrue%2C%22sms%22%3Atrue%2C%22calendar%22%3Atrue%2C%22tel%22%3Atrue%7D&canShowMR=0&qa_test_api&campid=&creatid=]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuccess -->
+        <test-method status="FAIL" signature="testSuccess(java.lang.String, java.lang.String)[pri:0, instance:testcases.fp.TC_Fp@4566e5bd]" name="testSuccess" duration-ms="556" started-at="2017-09-12T17:04:34Z" data-provider="apiUrlMapping" finished-at="2017-09-12T17:04:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[icon]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://pranathi.api.staging.airpush.com/v2/api.php?APIKEY=airpush&appId=45967&imei=f97cc7d26d3148c1b20be9d447c33dbd&imei_sha=0993e27ec48d9f38b0b5eb6aa92992cf&token=05c72f2484eb74a3ce6346239d13b5da&request_timestamp=2014-02-04+10%3A10%3A10_USA_GMT&packageName=com.test.sdk&version=17&language=English&country=India&statename=Gujarat&carriername=Vodafone&countryname=India&carrier=Vodafone&networkOperator=Vodafone&zip=&phoneModel=XT502&manufacturer=Motorola&ipaddress=181.11.23.95&longitude=69.706828&latitude=23.239117&sdkversion=8.03&wifi=0&useragent=Mozilla%252F5.0%2B%2528Linux%253B%2BU%253B%2BAndroid%2B4.1.2%253B%2Ben-gb%253B%2BC6602%2BBuild%252F10.1.1.A.1.253%2529%2BAppleWebKit%252F534.30%2B%2528KHTML%252C%2Blike%2BGecko%2529%2BVersion%252F4.0%2BMobile%2BSafari%252F534.30&android_id=eba4755a09701618389235798ad6dafe&android_id_sha=a9b550b44b38e4f44009df188eff90cb&screenSize=1260_1260&deviceUniqueness=serial&networkSubType=&isTablet=false&SD=3.0&isConnectionFast=true&unknownsource=0&appName=Airpush+SDK+6.0&email=glm856%40gmail.com&email_md5=d6c7e534c9957785aa4d7d5148de696e&email_sha=1179e12deacc30d6c0a86c4cbc12aed89c304b1f&dpi=480&sessionId=d116dcbcd293acada5c23d99e9f6fd88&locale=en_GB&overwrite_geo_vars=1&isXMLFound=1&model=message&action=geticon&qa_test_api&campid=&creatid=]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Body doesnt contain string : {"nextmessagecheck":7261} expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Body doesnt contain string : {"nextmessagecheck":7261} expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at api.controller.response.ApiResponseValidator.expectInBody(ApiResponseValidator.java:52)
+	at testcases.fp.TC_Fp.testSuccess(TC_Fp.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuccess -->
+        <test-method status="PASS" signature="testSuccess(java.lang.String, java.lang.String)[pri:0, instance:testcases.fp.TC_Fp@4566e5bd]" name="testSuccess" duration-ms="1595" started-at="2017-09-12T17:04:34Z" data-provider="apiUrlMapping" finished-at="2017-09-12T17:04:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[fp]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://pranathi.api.staging.airpush.com/fullpage/adcall.php?APIKEY=airpush&appId=45967&imei=5546fa67b8894e2181bef9cf1993740d&imei_sha=8a35a9ab9baad904cc6b0ad915a05910&token=308f805d9dcbccc705d97ef009400591&request_timestamp=2014-02-04+10%3A10%3A10_USA_GMT&packageName=com.test.sdk&version=17&language=English&country=United+States&statename=California&carriername=T-Mobile&countryname=United+States&carrier=T-Mobile&networkOperator=T-Mobile&zip=&phoneModel=Galaxy+Note+2&manufacturer=Samsung&ipaddress=181.11.23.95&longitude=0.000000&latitude=0.000000&sdkversion=9&wifi=0&useragent=Mozilla%252F5.0%2B%2528Linux%253B%2BU%253B%2BAndroid%2B4.1.2%253B%2Ben-gb%253B%2BC6602%2BBuild%252F10.1.1.A.1.253%2529%2BAppleWebKit%252F534.30%2B%2528KHTML%252C%2Blike%2BGecko%2529%2BVersion%252F4.0%2BMobile%2BSafari%252F534.30&android_id=a2e30d590aa414aeac3ade11b6d9c195&android_id_sha=2f5b8e6c682a573bc6b8c8eb5fe96278&screenSize=1260_1260&deviceUniqueness=serial&networkSubType=&isTablet=false&SD=1.0&isConnectionFast=true&unknownsource=0&appName=Airpush+SDK+6.0&email=glm856%40gmail.com&email_md5=d6c7e534c9957785aa4d7d5148de696e&email_sha=1179e12deacc30d6c0a86c4cbc12aed89c304b1f&dpi=480&sessionId=e950c7d12242f8147dcecdd985399650&locale=en_GB&overwrite_geo_vars=1&isXMLFound=1&qa_test_api&campid=&creatid=&adv_id=771e216953f552b0ec2d5737e94aca0a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuccess -->
+        <test-method status="FAIL" signature="testSuccess(java.lang.String, java.lang.String)[pri:0, instance:testcases.fp.TC_Fp@4566e5bd]" name="testSuccess" duration-ms="1052" started-at="2017-09-12T17:04:36Z" data-provider="apiUrlMapping" finished-at="2017-09-12T17:04:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[push]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://pranathi.api.staging.airpush.com/v2/api.php?APIKEY=airpush&appId=45967&imei=4021daeae32e49ff924db2f69933d26f&imei_sha=95ef5e4df895680ad2b79ee1a1c5b428&token=30efe548c03a11ee7465eef2eb1f3d48&request_timestamp=2014-02-04+10%3A10%3A10_USA_GMT&packageName=com.test.sdk&version=17&language=English&country=India&statename=Karnataka&carriername=Airtel+&countryname=India&carrier=Airtel+&networkOperator=Airtel+&zip=&phoneModel=OPTIMUS+G&manufacturer=LG&ipaddress=181.11.23.95&longitude=0.000000&latitude=0.000000&sdkversion=8.03&wifi=0&useragent=Mozilla%252F5.0%2B%2528Linux%253B%2BU%253B%2BAndroid%2B4.1.2%253B%2Ben-gb%253B%2BC6602%2BBuild%252F10.1.1.A.1.253%2529%2BAppleWebKit%252F534.30%2B%2528KHTML%252C%2Blike%2BGecko%2529%2BVersion%252F4.0%2BMobile%2BSafari%252F534.30&android_id=06c5249499d0d8e8958828e1c0897d23&android_id_sha=ac646870d8f8e6d44030261a2ac75854&screenSize=1260_1260&defviceUniqueness=serial&networkSubType=&isTablet=false&SD=3.0&isConnectionFast=true&unknownsource=0&appName=Airpush+SDK+6.0&email=glm856%40gmail.com&email_md5=d6c7e534c9957785aa4d7d5148de696e&email_sha=1179e12deacc30d6c0a86c4cbc12aed89c304b1f&dpi=480&sessionId=b5f507594dc0e83df992e1f5abff1776&locale=en_GB&overwrite_geo_vars=1&isXMLFound=1&model=message&action=getmessage&placement_type=interstitial&supports=%7B%22inlineVideo%22%3Atrue%2C%22storePictures%22%3Atrue%2C%22sms%22%3Atrue%2C%22calendar%22%3Atrue%2C%22tel%22%3Atrue%7D&qa_test_api&campid=&creatid=]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Body doesnt contain string : {"nextmessagecheck":7399,"status":204} expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Body doesnt contain string : {"nextmessagecheck":7399,"status":204} expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:93)
+	at org.testng.Assert.failNotEquals(Assert.java:512)
+	at org.testng.Assert.assertTrue(Assert.java:41)
+	at api.controller.response.ApiResponseValidator.expectInBody(ApiResponseValidator.java:52)
+	at testcases.fp.TC_Fp.testSuccess(TC_Fp.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuccess -->
+        <test-method status="PASS" signature="closeDbConnection()[pri:0, instance:testcases.fp.TC_Fp@4566e5bd]" name="closeDbConnection" is-config="true" duration-ms="1" started-at="2017-09-12T17:04:37Z" finished-at="2017-09-12T17:04:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDbConnection -->
+      </class> <!-- testcases.fp.TC_Fp -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
