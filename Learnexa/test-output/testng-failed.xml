@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="2" name="Failed suite [Suite]">
+  <test name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testcases.Chat">
+        <methods>
+          <include name="testcases"/>
+        </methods>
+      </class> <!-- testcases.Chat -->
+      <class name="testcases.CreationOfCertificate">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterMethod"/>
+          <include name="afterSuite"/>
+          <include name="createcontent" invocation-numbers="0"/>
+          <include name="beforeSuite"/>
+          <include name="afterTest"/>
+          <include name="beforeMethod"/>
+          <include name="setValues"/>
+        </methods>
+      </class> <!-- testcases.CreationOfCertificate -->
+      <class name="testcases.VideoStreaming">
+        <methods>
+          <include name="testcases"/>
+        </methods>
+      </class> <!-- testcases.VideoStreaming -->
+      <class name="testcases.CreationOfContentCourseByQuiz">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterMethod"/>
+          <include name="afterSuite"/>
+          <include name="createcontent" invocation-numbers="0"/>
+          <include name="beforeSuite"/>
+          <include name="afterTest"/>
+          <include name="beforeMethod"/>
+          <include name="setValues"/>
+        </methods>
+      </class> <!-- testcases.CreationOfContentCourseByQuiz -->
+      <class name="testcases.CreationOfCourseByAudioVideo">
+        <methods>
+          <include name="createcontent" invocation-numbers="0"/>
+          <include name="beforeTest"/>
+          <include name="afterMethod"/>
+          <include name="afterSuite"/>
+          <include name="setValues"/>
+          <include name="beforeSuite"/>
+          <include name="afterTest"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testcases.CreationOfCourseByAudioVideo -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

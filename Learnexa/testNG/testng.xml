@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose="2">
+   <test name="Test">
+   <parameter name="browser" value="chrome"/>
+    <classes>
+         <class name="testcases.CreationOfContentCourseByDocument"/> 
+      <!-- <class name="testcases.CreationOfContentCourseByPresentation"/>  -->
+      <class name="testcases.CreationOfContentCourseByWebPage"/>
+     <class name="testcases.CreationOfContentCourseByQuiz"/> 
+      <class name="testcases.CreationOfContentCourseBySurvey"/>
+       <class name="testcases.CreationOfContentCourseByTinCan"/>  
+	<!--          <class name="testcases.CreationOfContentCourseByScromPackage"/>  -->
+          <class name="testcases.CreationOfContentCourseByVideoAudioEmbed"/> 
+          <class name="testcases.CreationOfCourseByAudioVideo"/> 
+          <class name="testcases.CreationOfCertificate"/>              
+         <class name="testcases.CreationOfLiveEvents"/> 
+      <class name="testcases.CreationOfInPersonEvents"/>
+        <class name="testcases.Chat"/> 
+     <class name="testcases.CreationOfBundle"/> 
+     <class name="testcases.VideoStreaming"/>  
+     
+      <!-- <class name="testcases.CreationOfDocumentFromCatalog"/>
+    <class name="testcases.CreationOfLiveEventFromCatalog"/>
+      <class name="testcases.CreateInPersonFromCatalog"/>
+        <class name="testcases.CreationOfCertificationFromCatalog"/>
+          <class name="testcases.CreationOfBundleFromCatalog"/>   
+        <class name="testcases.HomeScreenFrame"/> 
+        <class name="testcases.NewSiteVerification"/>  
+           <class name="testcases.FailurePaymentFlow"/>
+           <class name="testcases.CardDeclinedPayment"/>
+           <class name="testcases.ChargeBackPayment"/>
+          <class name="testcases.CatalogSorting"/>
+          <class name="testcases.AttendingCourses"/>   
+            <class name="testcases.Chat"/>  
+             <class name="testcases.VideoStreaming"/>     -->
+        
+        
+                
+            	</classes>
+  </test> <!-- Test1 -->
+  </suite> <!-- Suite -->
