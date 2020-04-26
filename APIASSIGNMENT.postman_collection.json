@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "f97f37e3-3e46-4869-9dd3-bafdee8c3c60",
+		"name": "APIASSIGNMENT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Day_1JIRA",
+			"item": [
+				{
+					"name": "GetIssue",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "issueId",
+								"value": "MAR",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://api-mar2020.atlassian.net/rest/api/2/search?project=\"MAR\"&summary=New Defect Pranathi",
+							"protocol": "https",
+							"host": [
+								"api-mar2020",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"2",
+								"search"
+							],
+							"query": [
+								{
+									"key": "project",
+									"value": "\"MAR\""
+								},
+								{
+									"key": "summary",
+									"value": "New Defect Pranathi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMEtaData-Failed",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "issueId",
+								"value": "MAR",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://api-mar2020.atlassian.net/api/2/issue/createmeta?projectKeys=MAR2020",
+							"protocol": "https",
+							"host": [
+								"api-mar2020",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"api",
+								"2",
+								"issue",
+								"createmeta"
+							],
+							"query": [
+								{
+									"key": "projectKeys",
+									"value": "MAR2020"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateIssue Api version 3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fields\": {\n       \"project\":\n       {\n          \"key\": \"MAR\"\n       },\n       \"summary\": \"New Defect Pranathi\",\n       \"description\": { \"type\": \"doc\", \"version\": 1, \"content\": [ { \"type\": \"paragraph\", \"content\": [ { \"type\": \"text\", \"text\": \"Creating of an issue using project keys and issue type names using the REST API\" } ] } ] },\n\n       \"issuetype\": {\n    \n          \"name\": \"Bug\"\n       }\n        \n   }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-mar2020.atlassian.net/rest/api/3/issue",
+							"protocol": "https",
+							"host": [
+								"api-mar2020",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"issue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateIssue Version 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fields\": {\n       \"project\":\n       {\n          \"key\": \"MAR\"\n       },\n       \"summary\": \"New Defect Pranathi for Day2 assignment\",\n       \"description\": \"Creating of an issue for Day2 assignment\",\n\n       \"issuetype\": {\n    \n          \"name\": \"Bug\"\n       }\n        \n   }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-mar2020.atlassian.net/rest/api/2/issue",
+							"protocol": "https",
+							"host": [
+								"api-mar2020",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"2",
+								"issue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit/Update Issue",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fields\": {\n       \"project\":\n       {\n          \"key\": \"MAR\"\n       },\n       \"summary\": \"New Defect Pranathi Update\",\n       \"description\": \"Creating of an issue using project keys and issue type names using the REST API\",\n\n       \"issuetype\": {\n    \n          \"name\": \"Bug\"\n       }\n        \n   }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{server}}/rest/api/2/issue/{{jira_issue_id_rndm}}",
+							"protocol": "https",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"2",
+								"issue",
+								"{{jira_issue_id_rndm}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Issue",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api-mar2020.atlassian.net/rest/api/2/issue/MAR-67",
+							"protocol": "https",
+							"host": [
+								"api-mar2020",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"2",
+								"issue",
+								"MAR-67"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "kEJxzmhkQzvdeP8iysWN2D1B",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "rajalakshmi.govindarajan@testleaf.com",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "819f6999-ad02-41c5-8a2c-cf15ef0c7a46",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "520db19d-26f7-4dde-a33a-d9b539bdffae",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

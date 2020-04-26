@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "d7de5f8d-e40a-4289-bbb5-28bafaa376b9",
+		"name": "Day2_assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllIssues",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc276662-12d5-4eba-afb3-2bc0b7757c13",
+						"exec": [
+							"//get current time ",
+							"var endtime = new Date().getTime();",
+							"console.log(endtime);",
+							"",
+							"var starttime = 24*60*60*1000;",
+							"console.log(starttime);",
+							"",
+							"// starttime < created > endtime",
+							"",
+							"// get response",
+							"var resp = pm.response.json();",
+							"console.log(resp);",
+							"",
+							"//print issueId",
+							"var count = resp.issues.length;",
+							"console.log(count);",
+							"resp.issues.forEach(function(entry){",
+							"    var issue_id = entry.id;",
+							"    var created = entry.fields.created;",
+							"console.log(issue_id+\" : \"+created);",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "fields",
+						"value": "key",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api-mar2020.atlassian.net/rest/api/2/search?jql=project=\"MAR\"&issues=id&fields=created",
+					"protocol": "https",
+					"host": [
+						"api-mar2020",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project=\"MAR\""
+						},
+						{
+							"key": "issues",
+							"value": "id"
+						},
+						{
+							"key": "fields",
+							"value": "created"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllIssuesCreated>-1d",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc276662-12d5-4eba-afb3-2bc0b7757c13",
+						"exec": [
+							"//get current time ",
+							"var endtime = new Date().getTime();",
+							"console.log(endtime);",
+							"",
+							"var starttime = 24*60*60*1000;",
+							"console.log(starttime);",
+							"",
+							"// starttime < created > endtime",
+							"",
+							"// get response",
+							"var resp = pm.response.json();",
+							"console.log(resp);",
+							"",
+							"//print issueId",
+							"var count = resp.issues.length;",
+							"console.log(count);",
+							"resp.issues.forEach(function(entry){",
+							"    var issue_id = entry.id;",
+							"    var created = entry.fields.created;",
+							"    var key = entry.key",
+							"console.log(issue_id+\" : \"+created);",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "fields",
+						"type": "text",
+						"value": "key",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api-mar2020.atlassian.net/rest/api/2/search?jql=created > -1d",
+					"protocol": "https",
+					"host": [
+						"api-mar2020",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "created > -1d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllIssuesCreatedin24hrs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc276662-12d5-4eba-afb3-2bc0b7757c13",
+						"exec": [
+							"// get response",
+							"var resp = pm.response.json();",
+							"",
+							"//print issueId",
+							"var count = resp.issues.length;",
+							"var issueCountInLastDay = 0;",
+							"console.log(\"count: \"+count);",
+							"        var currTime = new Date().getTime();",
+							"     //   console.log(\"currTime :\"+currTime);",
+							"        var last24thHr = 24*60*60*1000",
+							"      //  console.log(\"last24thHr :\"+last24thHr)",
+							"        var expectedCreatedTime = currTime - last24thHr",
+							"     ",
+							"pm.globals.set(\"expectedCreatedTime\", expectedCreatedTime);",
+							"    resp.issues.forEach(function(entry){",
+							"    var issue_id = entry.id;",
+							"    var createdTime = entry.fields.created;",
+							"    var createdMS = new Date(createdTime).getTime();",
+							"    var expectedCreatedTime = pm.globals.get(\"expectedCreatedTime\"); ",
+							"   ",
+							"   // console.log(createdTime +\" in millsec :\"+createdMS)",
+							"   /* if( createdMS > expectedCreatedTime)",
+							"    {",
+							"         var key = entry.key",
+							"        console.log(issue_id+\" : \"+createdTime);",
+							"    }*/",
+							"    pm.test(\"Test if issue created in last 24hrs\", function () {",
+							"        ",
+							"    if( pm.expect(createdMS).to.be.above(expectedCreatedTime))",
+							"    {",
+							"         var key = entry.key",
+							"        console.log(issue_id+\" : \"+createdTime);",
+							"        issueCountInLastDay++;",
+							"    }",
+							"});",
+							"   ",
+							"})",
+							"",
+							"console.log(\"issueCountInLastDay: \"+issueCountInLastDay);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "45e9cc37-a5f6-4252-8043-6d2b95800e23",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{server}}/rest/api/2/search?jql=project=\"MAR\"&fields=created",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project=\"MAR\""
+						},
+						{
+							"key": "fields",
+							"value": "created"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetIssueByIssueKey",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc276662-12d5-4eba-afb3-2bc0b7757c13",
+						"exec": [
+							"//get current time ",
+							"var endtime = new Date().getTime();",
+							"console.log(endtime);",
+							"",
+							"var starttime = 24*60*60*1000;",
+							"console.log(starttime);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-mar2020.atlassian.net/rest/api/2/issue/MAR-172",
+					"protocol": "https",
+					"host": [
+						"api-mar2020",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"MAR-172"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "created",
+							"disabled": true
+						},
+						{
+							"key": "issues",
+							"value": "id",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "kEJxzmhkQzvdeP8iysWN2D1B",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "rajalakshmi.govindarajan@testleaf.com",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "69641083-1b85-496b-a8a0-e6371d528807",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "1ba11ba4-b90f-421f-b003-d2a4fde04a1c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

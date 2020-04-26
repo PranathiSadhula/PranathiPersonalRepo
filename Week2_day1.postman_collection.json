@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "0cffdc51-a5db-4c8c-b6ab-02de8b612b87",
+		"name": "Week2_day1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create CR",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"short_description\" : \"{{short_desc}}\",\n\t\"description\" : \"Pranathi Sadhula\",\n\t\"category\" : \"Software\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{server}}/api/now/table/{{table_cr}}",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"{{table_cr}}"
+					]
+				},
+				"description": "Get all Incidents from SeriveNow\n"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessToken",
+				"value": "PIVrVDUmq6achnco8vQMHRq_Mo9ydeUUm9S5y-hhtzLclKchS5Wka3QuuCBI8A8CtO43jj3RN2O_CDNUW3qCHg",
+				"type": "string"
+			},
+			{
+				"key": "tokenType",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ec574a24-3456-43cf-9638-75127ecf5999",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "17fb7174-e0ce-489b-bfc2-0450acffbfbf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "4b2031ea-cfd0-45c0-a368-bd7ea11422c4",
+			"key": "table_cr",
+			"value": "change_request",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
